@@ -17,7 +17,8 @@ void Robot::RobotInit() {
 void Robot::RobotPeriodic() {
   // Group 1: 
   //  Use get_control_signal on the '_control' variable and pass it to the Drive() method.
-
+  std::pair<double, double> signal = _control.get_control_signal(_xbox);
+  Drive(signal.first, signal.second);
 }
 
 void Robot::Drive(double left, double right) {
