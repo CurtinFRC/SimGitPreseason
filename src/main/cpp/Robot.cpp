@@ -4,12 +4,13 @@
 
 #include <iostream>
 
+
 void Robot::RobotInit() {
   // Group 1: 
   //  Setup The xbox controller (usage::xbox) and the drivetrain (usage::drivetrain)
   //    Try not to hard code the values (try using GetChannel on the motors and GetPort on the
   //    xbox controller)
-  usage::xbox(_xbox.GetPOrt());
+  usage::xbox(_xbox.GetPort());
   usage::drivetrain(_left.GetChannel(), _right.GetChannel());
 }
 
