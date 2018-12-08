@@ -93,6 +93,7 @@
     "cstdarg": "cpp",
     "cwctype": "cpp",
     "cinttypes": "cpp",
-    "*.inc": "cpp"
+    "*.inc": "cpp",
+    "xfunctional": "cpp"
   }
 }
