@@ -9,11 +9,13 @@ void Robot::RobotInit() {
   //  Setup The xbox controller (usage::xbox) and the drivetrain (usage::drivetrain)
   //    Try not to hard code the values (try using GetChannel on the motors and GetPort on the
   //    xbox controller)
+  // TBH i rEally dont know what i am doing so lemme just uuuuh
 }
 
 void Robot::RobotPeriodic() {
   // Group 1: 
   //  Use get_control_signal on the '_control' variable and pass it to the Drive() method.
+
 }
 
 void Robot::Drive(double left, double right) {
