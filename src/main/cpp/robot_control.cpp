@@ -8,5 +8,7 @@ std::pair<double, double> robot_control::get_control_signal(frc::XboxController 
 
   std::pair<double, double> signal;
   // Do your logic here!
+  signal.first = xspeed - yspeed;
+  signal.second = xspeed + yspeed;
   return signal;
 }
