@@ -10,6 +10,8 @@ void Robot::RobotInit() {
   //    Try not to hard code the values (try using GetChannel on the motors and GetPort on the
   //    xbox controller)
   // TBH i rEally dont know what i am doing so lemme just uuuuh
+  usage::xbox(_xbox.GetPort());
+  usage::drivetrain(_left.GetChannel(),_right.GetChannel());
 }
 
 void Robot::RobotPeriodic() {
