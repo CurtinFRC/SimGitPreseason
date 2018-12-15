@@ -1,12 +1,21 @@
 #include "robot_control.h"
 
-// Group 2: 
-//  Do the logic for creating the control signal based on a previous class.
+const double xbox_deadzone = 0.05;
+
 std::pair<double, double> robot_control::get_control_signal(frc::XboxController &xbox) {
-  double xspeed = xbox.GetX(frc::XboxController::JoystickHand::kLeftHand);
-  double yspeed = -xbox.GetY(frc::XboxController::JoystickHand::kRightHand);
+  double yspeed = -xbox.GetX(frc::XboxController::JoystickHand::kRightHand);
+  double xspeed = xbox.GetY(frc::XboxController::JoystickHand::kLeftHand);
 
   std::pair<double, double> signal;
-  // Do your logic here!
+
+  if (abs(xspeed) < xbox_deadzone) xspeed = 0;
+  if (abs(yspeed) < xbox_deadzone) yspeed = 0;
+
+  xspeed *= abs(xspeed);
+  yspeed *= abs(yspeed);
+  
+  signal.first = yspeed + xspeed;
+  signal.second = yspeed - xspeed;
+
   return signal;
 }

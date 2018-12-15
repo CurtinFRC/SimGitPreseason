@@ -5,18 +5,21 @@
 #include <iostream>
 
 void Robot::RobotInit() {
-  // Group 1: 
-  //  Setup The xbox controller (usage::xbox) and the drivetrain (usage::drivetrain)
-  //    Try not to hard code the values (try using GetChannel on the motors and GetPort on the
-  //    xbox controller)
+  usage::drivetrain(_left.GetChannel(), _right.GetChannel());
+
+  usage::xbox(_xbox.GetPort());
 }
 
 void Robot::RobotPeriodic() {
-  // Group 1: 
-  //  Use get_control_signal on the '_control' variable and pass it to the Drive() method.
+  std::pair<double, double> signal = _control.get_control_signal(_xbox);
+  Drive(signal.first, signal.second);
 }
 
 void Robot::Drive(double left, double right) {
-  // Group 2:
-  //  Control the _left and _right motors with the given values.
+  _left.Set(left);
+  _right.Set(right);
+
+  // 4-long double 'array'
+  double array[4];
+  std::pair<std::pair<double, double>, std::pair<double, double>> betterArray;
 }
