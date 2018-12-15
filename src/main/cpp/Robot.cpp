@@ -19,6 +19,6 @@ void Robot::RobotPeriodic() {
 void Robot::Drive(double left, double right) {
   // Group 2:
   //  Control the _left and _right motors with the given values.
-  _left.Set(right);
-  _right.Set(left);
+  _left.Set(left);
+  _right.Set(right);
 }
